@@ -3,13 +3,13 @@ using System;
 class Program {
   public static void Main (string[] args) {
     Console.WriteLine ("Input wind speed");
-    
+  
    var WindSpeedMPH = Console.ReadLine();   
     var WindSpeedSplit = WindSpeedMPH.Split(' ');
       var WindSpeedNumber = WindSpeedSplit[0];
-
-    int WindSpeed;
-int.TryParse(WindSpeedNumber, out WindSpeed);
+//changes the user input from a string to just the number
+    double WindSpeed;
+if(double.TryParse(WindSpeedNumber, out WindSpeed)){
   if( WindSpeed >= 157 ){
     Console.WriteLine( "Category Five Hurricane");
   }
@@ -25,11 +25,11 @@ int.TryParse(WindSpeedNumber, out WindSpeed);
     else if( WindSpeed >= 74 && WindSpeed < 96 ){
      Console.WriteLine("Category One Hurricane"); 
       }
-    else if(WindSpeed < 74 ){
+    else{
      Console.WriteLine("Not a Hurricane"); 
-      }
+      }}
     else {
-      Console.WriteLine("Invald Input");
+      Console.WriteLine("Invalid Input");
     }
   }
 }
